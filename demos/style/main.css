@@ -219,7 +219,6 @@ input.placehodler{
 	margin-top: 20px;
 }
 .content-right section{
-	width: 100%;
 	height: 222px;
 	padding: 20px;
 	background-color: #FFFFFF;
@@ -316,6 +315,7 @@ input.placehodler{
 .ft-form li{
 	float: left;
 	margin-right: 30px;
+	*margin-right: 15px;
 }
 .ft-form li i{
 	display: inline-block;
@@ -337,6 +337,7 @@ input.placehodler{
 	padding: 3px 20px;
 	margin: 0px;
 	border-radius: 5px;
+	vertical-align: middle;
 }
 .form-message li input[type="text"]{
 	width: 879px;
