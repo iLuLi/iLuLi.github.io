@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style/reset.css">
+    <link rel="stylesheet" type="text/css" href="./style/main.css">
+    <script src="http://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $(".active").each(function(i, item) {
+            var tagName = item.nodeName.toLowerCase();
+            if (tagName == 'a') {
+                var parent = $(item).parent().parent();
+                parent.on('click', 'a', function() {
+                    parent.find(".active").removeClass("active");
+                    $(this).addClass("active");
+                })
+            } else if (item.className.indexOf("tag")) {
+                var parent = $(item).parent();
+                parent.on('click', '.tag', function() {
+                    parent.find(".active").removeClass("active");
+                    $(this).addClass("active");
+                })
+            }
+        });
+
+        //
+        $(".placehodler").each(function(i, item) {
+            var placehodler = $(item).attr("data-tips");
+            $(item).on("blur", function() {
+                if (item.value == "") {
+                    item.value = placehodler;
+                    $(item).addClass("placehodler").attr("hasvalue", "false");
+                } else {
+                    $(item).attr("hasvalue", "true");
+                }
+            });
+            $(item).on("focus", function() {
+                if ($(item).attr("hasvalue") == undefined || $(item).attr("hasvalue") == "false") {
+                    item.value = "";
+                }
+                $(item).removeClass("placehodler");
+            })
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="hd-info">
+            <div class="container">
+                <div class="l">
+                    您好，欢迎来到路易迪奥中国官网！
+                </div>
+                <span class="l hd-info-phone"><i></i>400-669-2919</span>
+                <nav class="clearfix">
+                    <ul>
+                        <li><a href=javascript:void(0) class="active">中国官网</a></li>
+                        <li><a href=javascript:void(0)>加盟站点</a></li>
+                        <li><a href=javascript:void(0)>眼镜商城</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="hd-logo">
+            <div class="container">
+                <img src="./images/images_07.png" alt="">
+                <img class="r" src="./images/images_09.png" alt="">
+            </div>
+        </div>
+        <nav class="hd-nav">
+            <ul class="clearfix container">
+                <li><a class="active" href=javascript:void(0)>首页</a></li>
+                <li><a href=javascript:void(0)>louisdior</a></li>
+                <li><a href=javascript:void(0)>中国集团</a></li>
+                <li><a href=javascript:void(0)>新闻中心</a></li>
+                <li><a href=javascript:void(0)>眼睛连锁</a></li>
+                <li><a href=javascript:void(0)>中国门店</a></li>
+                <li><a href=javascript:void(0)>眼镜学堂</a></li>
+                <li><a href=javascript:void(0)>眼睛品牌</a></li>
+                <li><a href=javascript:void(0)>加盟中心</a></li>
+                <li><a href=javascript:void(0)>客服中心</a></li>
+            </ul>
+            <div class="hd-nav-images">
+                <img src="./images/images_13.gif" alt="">
+            </div>
+        </nav>
+    </header>
+    <div class="map-local">
+        <div class="container">
+            <span class="fa f24 b">LouisDior</span>
+            <span class="fw f14 c7e">&nbsp;&nbsp;|&nbsp;&nbsp;您所在的位置：</span>
+            <span class="fw f14 c7e">&nbsp;&nbsp;首页&nbsp;&nbsp;>&nbsp;&nbsp;LouisDior&nbsp;&nbsp;>&nbsp;&nbsp;品牌简介</span>
+        </div>
+    </div>
+    <article class="content">
+        <div class="content-main container clearfix">
+            <aside class="content-left">
+                <ul class="aside-nav">
+                    <li><a href=javascript:void(0)>品牌简介</a></li>
+                    <li><a class="active" href=javascript:void(0)>品牌内涵</a></li>
+                    <li><a href=javascript:void(0)>品牌理念</a></li>
+                    <li><a href=javascript:void(0)>品牌使命</a></li>
+                    <li><a href=javascript:void(0)>品牌愿景</a></li>
+                    <li><a href=javascript:void(0)>品牌大片</a></li>
+                </ul>
+                <div class="aside-ad">
+                    <img src="./images/images_26.png" alt="">
+                </div>
+                <div class="aside-tags">
+                    <div class="aside-tags-hd clearfix">
+                        <div class="hd-tag tag active"><a href=javascript:void(0)>加盟动态</a><i></i></div>
+                        <div class="hd-tag tag"><a href=javascript:void(0)>品牌动态</a><i></i></div>
+                    </div>
+                    <div class="aside-tags-list">
+                        <ul>
+                            <li><a href=javascript:void(0)>揭秘网贷追待人：手机定位胡思你，还清贷款扔被曝光 </a>
+                                <p><span>2016-07-10 11:25</span><span class="author">LouisDior</span></p>
+                                <i class="sub1">1</i></li>
+                            <li><a href=javascript:void(0)>揭秘网贷追待人：手机定位胡思你，还清贷款扔被曝光 </a>
+                                <p><span>2016-07-10 11:25</span><span class="author">LouisDior</span></p><i class="sub2">2</i></li>
+                            <li><a href=javascript:void(0)>揭秘网贷追待人：手机定位胡思你，还清贷款扔被曝光 </a>
+                                <p><span>2016-07-10 11:25</span><span class="author">LouisDior</span></p><i class="sub3">3</i></li>
+                            <li><a href=javascript:void(0)>揭秘网贷追待人：手机定位胡思你，还清贷款扔被曝光 </a>
+                                <p><span>2016-07-10 11:25</span><span class="author">LouisDior</span></p><i class="sub4">4</i></li>
+                            <li><a href=javascript:void(0)>揭秘网贷追待人：手机定位胡思你，还清贷款扔被曝光 </a>
+                                <p><span>2016-07-10 11:25</span><span class="author">LouisDior</span></p><i class="sub5">5</i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="aside-hot">
+                    <div class="aside-hot-img">
+                        <img src="./images/images_37.png" alt="">
+                    </div>
+                    <div class="aside-hot-img">
+                        <img src="./images/images_41.png" alt="">
+                    </div>
+                </div>
+            </aside>
+            <div class="content-right">
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="content-item-img"><img src="./images/images_17.png" alt=""></div>
+                    <div class="content-item-info">
+                        <h3><a href=javascript:void(0)>只要有情怀，路易·迪奥给您最美的MiuMiu</a></h3>
+                        <p>MiuMiu，Prada集团的第二大品牌，国际眼镜连锁路易迪奥在中国市场授权合作的众多国际时尚大牌之一，今天，我们就和路易迪奥造型师一起，领略下这个极具个性化和少女情怀的眼镜品牌，以及她备受时尚达人追捧的六大系列太阳镜产品。</p>
+                        <div class="content-item-date">
+                            <i></i>
+                            <span>2016-7-10 10:47</span>
+                        </div>
+                    </div>
+                </section>
+                <div class="content-pages">
+                    <ul>
+                        <li><a class="active" href=javascript:void(0)>1</a></li>
+                        <li><a href=javascript:void(0)>2</a></li>
+                        <li><a href=javascript:void(0)>3</a></li>
+                        <li><a href=javascript:void(0)>4</a></li>
+                        <li><a href=javascript:void(0)>5</a></li>
+                        <li><a href=javascript:void(0)>...</a></li>
+                        <li><a href=javascript:void(0)>10</a></li>
+                        <li><a class="changepage" href=javascript:void(0)>下一页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer class="footer">
+        <div class="ft-form">
+            <form action="" class="">
+                <ul class="container clearfix">
+                    <li><i class="form-sub-phone"></i><span>手机</span>
+                        <input class="placehodler" value="请输入手机号" data-tips="请输入手机号" type="text">
+                    </li>
+                    <li><i class="form-sub-qq"></i><span>QQ</span>
+                        <input class="placehodler" value="请输入QQ" data-tips="请输入QQ" type="text">
+                    </li>
+                    <li><i class="form-sub-name"></i><span>姓名</span>
+                        <input class="placehodler" value="您的姓名" data-tips="您的姓名" type="text">
+                    </li>
+                </ul>
+                <hr>
+                <ul class="form-message container clearfix">
+                    <li><span>您的留言</span>
+                        <input class="placehodler" data-tips="请输入留言" value="请输入留言" type="text">
+                    </li>
+                    <li>
+                        <input type="button" value="提交">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="ft-info">
+            <div class="ft-info-shop container">
+                <i></i>
+                <span class="c02a">路易迪奥[LouisDior]</span><span>国际眼镜连锁在中国已有<span class="c02a">260</span><span>余家门店，遍及北京、天津、上海、杭州、成都、昆明......</span>
+            </div>
+        </div>
+        <div class="ft-link">
+            <div class="container clearfix">
+                <ul class="ft-link-first">
+                    <li><a class="c02a" href=javascript:void(0)>路易●迪奥</a></li>
+                    <li><a href=javascript:void(0)>中国集团</a></li>
+                    <li><a href=javascript:void(0)>投资者关系</a></li>
+                    <li><a href=javascript:void(0)>大事记</a></li>
+                    <li><a href=javascript:void(0)>核心事业群</a></li>
+                    <li><a href=javascript:void(0)>国际团队</a></li>
+                    <li><a href=javascript:void(0)>人力资源</a></li>
+                    <li><a href=javascript:void(0)>社会责任</a></li>
+                    <li><a href=javascript:void(0)>荣誉与奖项</a></li>
+                </ul>
+                <ul>
+                    <li><a class="c02a" href=javascript:void(0)>路易●迪奥</a></li>
+                    <li><a href=javascript:void(0)>中国集团</a></li>
+                    <li><a href=javascript:void(0)>投资者关系</a></li>
+                    <li><a href=javascript:void(0)>大事记</a></li>
+                    <li><a href=javascript:void(0)>核心事业群</a></li>
+                    <li><a href=javascript:void(0)>国际团队</a></li>
+                    <li><a href=javascript:void(0)>人力资源</a></li>
+                    <li><a href=javascript:void(0)>社会责任</a></li>
+                    <li><a href=javascript:void(0)>荣誉与奖项</a></li>
+                </ul>
+                <ul>
+                    <li><a class="c02a" href=javascript:void(0)>路易●迪奥</a></li>
+                    <li><a href=javascript:void(0)>中国集团</a></li>
+                    <li><a href=javascript:void(0)>投资者关系</a></li>
+                    <li><a href=javascript:void(0)>大事记</a></li>
+                    <li><a href=javascript:void(0)>核心事业群</a></li>
+                    <li><a href=javascript:void(0)>国际团队</a></li>
+                    <li><a href=javascript:void(0)>人力资源</a></li>
+                    <li><a href=javascript:void(0)>社会责任</a></li>
+                    <li><a href=javascript:void(0)>荣誉与奖项</a></li>
+                </ul>
+                <ul>
+                    <li><a class="c02a" href=javascript:void(0)>路易●迪奥</a></li>
+                    <li><a href=javascript:void(0)>中国集团</a></li>
+                    <li><a href=javascript:void(0)>投资者关系</a></li>
+                    <li><a href=javascript:void(0)>大事记</a></li>
+                    <li><a href=javascript:void(0)>核心事业群</a></li>
+                    <li><a href=javascript:void(0)>国际团队</a></li>
+                    <li><a href=javascript:void(0)>人力资源</a></li>
+                    <li><a href=javascript:void(0)>社会责任</a></li>
+                    <li><a href=javascript:void(0)>荣誉与奖项</a></li>
+                </ul>
+                <ul>
+                    <li><a class="c02a" href=javascript:void(0)>路易●迪奥</a></li>
+                    <li><a href=javascript:void(0)>中国集团</a></li>
+                    <li><a href=javascript:void(0)>投资者关系</a></li>
+                    <li><a href=javascript:void(0)>大事记</a></li>
+                    <li><a href=javascript:void(0)>核心事业群</a></li>
+                    <li><a href=javascript:void(0)>国际团队</a></li>
+                    <li><a href=javascript:void(0)>人力资源</a></li>
+                    <li><a href=javascript:void(0)>社会责任</a></li>
+                    <li><a href=javascript:void(0)>荣誉与奖项</a></li>
+                </ul>
+                <ul>
+                    <li><a class="c02a" href=javascript:void(0)>路易●迪奥</a></li>
+                    <li><a href=javascript:void(0)>中国集团</a></li>
+                    <li><a href=javascript:void(0)>投资者关系</a></li>
+                    <li><a href=javascript:void(0)>大事记</a></li>
+                    <li><a href=javascript:void(0)>核心事业群</a></li>
+                    <li><a href=javascript:void(0)>国际团队</a></li>
+                    <li><a href=javascript:void(0)>人力资源</a></li>
+                    <li><a href=javascript:void(0)>社会责任</a></li>
+                    <li><a href=javascript:void(0)>荣誉与奖项</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="ft-logo">
+            <img src="./images/images_63.png" alt="">
+        </div>
+        <hr>
+        <div class="ft-company">
+            <span>国际著名眼镜连锁品牌 - 路易迪奥「Louis Dior」眼镜连锁、眼镜加盟、眼镜店加盟官网 - 眼镜店加盟排行榜连续12年领军品牌！</span>
+            <br>
+            <span>中国消费者服务专线:4009-985-986 眼镜店加盟合作专线:400-669-2919</span>
+            <br>
+            <span>路易迪奥（中国）版权所有 京 ICP 备 09047981 号 -3</span>
+        </div>
+    </footer>
+</body>
+
+</html>
